@@ -1,0 +1,33 @@
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Hardhat build artifacts
+artifacts/
+cache/
+typechain/
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Compiled binaries and logs
+*.log
+*.tsbuildinfo
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+*.sw?
+*.DS_Store
+Thumbs.db
+
+# Optional: Hardhat-specific outputs
+coverage/
+coverage.json
+gasReporterOutput.json
