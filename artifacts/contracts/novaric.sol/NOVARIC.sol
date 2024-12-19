@@ -11,17 +11,12 @@ import {Nonces} from "@openzeppelin/contracts/utils/Nonces.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @custom:security-contact security@novaric.co
-contract NOVARIC is
-    ERC20,
-    ERC20Pausable,
-    Ownable,
-    ERC20Permit,
-    ERC20Votes,
-    ERC20FlashMint
-{
-    constructor(
-        address initialOwner
-    ) ERC20("NOVARIC", "NVX") Ownable(initialOwner) ERC20Permit("NOVARIC") {
+contract NOVARIC is ERC20, ERC20Pausable, Ownable, ERC20Permit, ERC20Votes, ERC20FlashMint {
+    constructor(address initialOwner)
+        ERC20("NOVARIC", "NVX")
+        Ownable(initialOwner)
+        ERC20Permit("NOVARIC")
+    {
         _mint(msg.sender, 2612 * 10 ** decimals());
     }
 
@@ -39,17 +34,19 @@ contract NOVARIC is
 
     // The following functions are overrides required by Solidity.
 
-    function _update(
-        address from,
-        address to,
-        uint256 value
-    ) internal override(ERC20, ERC20Pausable, ERC20Votes) {
+    function _update(address from, address to, uint256 value)
+        internal
+        override(ERC20, ERC20Pausable, ERC20Votes)
+    {
         super._update(from, to, value);
     }
 
-    function nonces(
-        address owner
-    ) public view override(ERC20Permit, Nonces) returns (uint256) {
+    function nonces(address owner)
+        public
+        view
+        override(ERC20Permit, Nonces)
+        returns (uint256)
+    {
         return super.nonces(owner);
     }
 }
