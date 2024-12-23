@@ -1,7 +1,7 @@
 {
     "_format": "hh-sol-artifact-1",
     "contractName": "NOVARIC",
-    "sourceName": "/contracts/artifacts/NOVARIC.sol/NOVARIC.sol",
+    "sourceName": "contracts/artifacts/NOVARIC.sol",
     "abi": [
         {
             "inputs": [
